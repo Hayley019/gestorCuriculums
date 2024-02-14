@@ -11,12 +11,15 @@
 </head>
 
 <body>
-    <header>Gestor de Curriculums</header>
+    <header class="animated bounce">
+        <img class="animated rollIn" src="./imagenes/Logo.png" alt="Logo de la empresa">
+        <h1 >Gestor de Curriculums</h1>
+    </header>
     <div class="layer">
-        <div class="list-group border-0 rounded-0 text-sm-start sidebar">
+        <div class="list-group border-0 rounded-0 text-sm-start sidebar animated jackInTheBox">
             <a href="#" class="list-group-item" data-bs-parent="#navbar"><span>Menu</span> </a>
             <hr>
-            <a href="#" class="list-group-item" data-bs-parent="#navbar"> <span>Recividos</span></a>
+            <a href="#" class="list-group-item" data-bs-parent="#navbar"> <span>Recibidos</span></a>
             <a href="#" class="list-group-item" data-bs-parent="#navbar"></i> <span>Revisados</span></a>
             <a href="#" class="list-group-item" data-bs-parent="#navbar"></i> <span>Aceptados</span></a>
             <a href="#" class="list-group-item" data-bs-parent="#navbar"></i> <span>Rechazados</span></a>
@@ -24,10 +27,59 @@
             <hr>
         </div>
         <main>
-            Texto de ayuda
+            <div>
+                <div class="grupo limit" id="grupo1">
+                    <img src="./imagenes/foto de usuario.jpg" alt="Foto de usuario" class="foto">
+                    <input type="checkbox" class="green" name="opcion" id="opcion1" onclick="marcar(this, 'grupo1')">
+                    <label for="opcion1"> Aceptados</label>
+            
+                    <input type="checkbox" class="red" name="opcion" id="opcion2" onclick="marcar(this, 'grupo1')">
+                    <label for="opcion2"> Rechazados</label>
+            
+                    <input type="checkbox" class="yellow" name="opcion" id="opcion3" onclick="marcar(this, 'grupo1')">
+                    <label for="opcion3"> Pendientes</label>
+                </div> 
+                <hr>
+                <div class="grupo limit" id="grupo2">
+                    <img src="./imagenes/foto de usuario.jpg" alt="Foto de usuario" class="foto">
+                    <input type="checkbox" class="green" name="opcion" id="opcion4" onclick="marcar(this, 'grupo2')">
+                    <label for="opcion4"> Aceptados</label>
+            
+                    <input type="checkbox" class="red" name="opcion" id="opcion5" onclick="marcar(this, 'grupo2')">
+                    <label for="opcion5"> Rechazados</label>
+            
+                    <input type="checkbox" class="yellow" name="opcion" id="opcion6" onclick="marcar(this, 'grupo2')">
+                    <label for="opcion6"> Pendientes</label>
+                </div>
+                <hr>
+                <div class="grupo limit" id="grupo3">
+                    <img src="./imagenes/foto de usuario.jpg" alt="Foto de usuario" class="foto">
+                    <input type="checkbox" class="green" name="opcion" id="opcion7" onclick="marcar(this, 'grupo3')">
+                    <label for="opcion7"> Aceptados</label>
+            
+                    <input type="checkbox" class="red" name="opcion" id="opcion8" onclick="marcar(this, 'grupo3')">
+                    <label for="opcion8"> Rechazados</label>
+            
+                    <input type="checkbox" class="yellow" name="opcion" id="opcion9" onclick="marcar(this, 'grupo3')">
+                    <label for="opcion9"> Pendientes</label>
+                </div>
+            </div>
+            <footer class="animated bounce">
+                Curso Desarollo Web TecMilenio
+            </footer>
         </main>
     </div>
-    
-</body>
+    <script>
+        function marcar(checkbox, grupo) {
+            // Desmarcar todas las casillas del grupo antes de marcar la actual
+            var checkboxes = document.querySelectorAll("#" + grupo + " input[name='opcion']");
+            checkboxes.forEach(function (element) {
+                if (element !== checkbox) {
+                    element.checked = false;
+                }
+            });
+        }
+    </script>
 
+</body>
 </html>
